@@ -1,0 +1,130 @@
+.navbar
+  padding: 3rem
+  margin-bottom: 30px
+
+
+.nav-list
+  list-style: none
+  display: flex
+  gap: 30px
+  margin-left: 150px
+  padding: 0
+
+.nav-item
+  .nav-link
+    text-decoration: none
+    color: black
+    position: relative
+
+    &::after
+      content: ''
+      display: block
+      width: 0
+      height: 2px
+      background: #102E4A
+      transition: width 0.3s
+      position: absolute
+      bottom: -2px
+      left: 0
+
+    &:hover::after
+      width: 100%
+
+.profiles
+  margin-top: -20px
+  width: 750px
+
+.title
+  margin-bottom: -20px
+  font-weight: bold
+  font-size: 15px
+  color: #102E4A
+
+  &:hover
+    text-decoration: underline
+
+.heart-icon
+  position: relative
+  left: 700px
+  top: -20px
+  width: 17px
+  height: 17px
+  transition: transform 0.2s ease-in-out, width 0.2s ease-in-out, height 0.2s ease-in-out
+
+
+.heart-icon:hover
+  transform: scale(1.2)
+
+
+.tags
+  margin-top: 15px
+
+.tag
+  color: #102E4A
+  background-color: #55C1FF
+  border-radius: 30px
+  padding: 3px 10px
+
+
+.profiles
+  .card
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1)
+    transition: box-shadow 0.3s ease
+
+
+  .card:hover
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2)
+
+.comment
+  height: 33px
+  margin-top: 18px
+  margin-left: 10px
+
+.button
+  color: white
+  background-color: #102E4A
+  margin-top: 17px
+
+.comment-container
+  display: flex
+  align-items: center
+
+.comment-container .comment
+  flex: 1
+  margin-right: 10px
+
+.comment-container .button
+  white-space: nowrap
+
+.table
+  margin-top: 20px
+
+
+
+.commentText
+  display: flex
+  align-items: center
+  font-size: 14px
+
+  svg
+    margin-right: 10px
+    color: #102E4A
+
+.delete
+  margin-left: 300px
+  color: #102E4A
+  text-decoration: underline
+
+
+
+
+
+
+
+
+
+
+
+
+
+

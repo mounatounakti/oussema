@@ -1,0 +1,70 @@
+<div class="content">
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="#" class="nav-link">Button 1</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Button 2</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Button 3</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Button 4</a></li>
+    </ul>
+  </nav>
+
+  <div class="profiles">
+  <div *ngFor="let post of posts; let i = index" class="card row-hover pos-relative py-3 px-3 mb-3 ">
+      <div class="row align-items-center">
+        <div class="col-md-8 mb-3 mb-sm-0">
+
+          <div class="title">
+            <h5> <a href="#" class="title">{{ post.title }}</a> </h5>
+            <button type="submit" title="likeButton" (click)="onLike(i)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-heart-fill heart-icon" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+            </svg>
+          </button>
+          </div>
+
+          <p class=" text-sm"><span class="op-6">Posted</span>
+            <a class="text-black" href="#">&nbsp; {{ post.time }}</a>
+            <span class="op-6">&nbsp; ago by</span>
+            <a class="text-black" href="#">&nbsp; {{ post.author }}</a></p>
+
+
+          <div class=" tags text-sm op-5">
+            <a *ngFor="let tag of post.tags" class="tag text-black mr-2" href="#">{{ tag }}</a>
+          </div>
+        </div>
+        <div class="col-md-4 op-7">
+          <div class="row text-center op-7">
+            <div class="col px-1"> <i class="ion-connection-bars icon-1x"></i> <span class="d-block text-sm">{{ post.numComments }} Comments</span> </div>
+            <div class="col px-1"> <i class="ion-ios-chatboxes-outline icon-1x"></i> <span class="d-block text-sm">{{ post.likes }} Likes</span> </div>
+
+          </div>
+        </div>
+
+        <form (ngSubmit)="onSubmit(commentForm, i)" #commentForm="ngForm">
+          <div class="comment-container">
+            <input type="text" id="commentInput" title="comment" class="comment form-control" placeholder="Write your comment here ..." ngModel name="comment" required>
+            <button [disabled]="commentForm.invalid" type="submit" class="button btn btn-sm">Submit</button>
+          </div>
+        </form>
+
+        <table class="table">
+          <tbody>
+            <tr *ngFor="let comment of post.comments; let j = index">
+              <th scope="row"></th>
+              <td class="commentText">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+                  <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15"/>
+                </svg>
+                {{ comment.commentText }}
+
+                <button type="button" class="delete" (click)="onDelete(i, j)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,52 @@
+<div class="sticky-inner">
+  <div class="button">
+    <button type="button" class="btn" (click)="openModel()" data-toggle="modal" data-target="#myModal">Ask Question</button>
+  </div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Ask Question</h4>
+      </div>
+      <div class="modal-body">
+
+        <label for="input1">Input 1 Label</label>
+        <input type="text" id="input1" title="input1" class="comment form-control">
+
+        <label for="input2">Input 2 Label</label>
+        <input type="text" id="input2" title="input2" class="comment form-control">
+
+        <label for="input3">Input 3 Label</label>
+        <input type="text" id="input3" title="input3" class="comment form-control">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="closeModel()" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <div class="bg-white mb-3">
+    <h4 class="title">Active Topics</h4>
+    <div class="m-0" *ngFor="let topic of topics">
+    <div class="pos-relative px-3 py-3">
+
+
+      <h6 class="text-primary text-sm">
+        <div class="topic"></div>
+        <a href="#" class="topic">{{ topic.title }}</a>
+      </h6>
+
+      <p class="mb-0 text-sm">
+        <span class="op-6">Posted</span>
+        <a class="text-black" href="#">&nbsp; {{ topic.time }}</a>
+        <span class="op-6">&nbsp; ago by</span>
+        <a class="text-black" href="#">&nbsp;{{ topic.author }}</a></p>
+
+    </div>
+  </div>
+</div>
+</div>

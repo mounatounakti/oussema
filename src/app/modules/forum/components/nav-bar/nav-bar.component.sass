@@ -1,0 +1,31 @@
+.navbar
+  padding: 3rem
+  margin-bottom: 30px
+
+
+.nav-list
+  list-style: none
+  display: flex
+  gap: 30px
+  margin-left: 150px
+  padding: 0
+
+.nav-item
+  .nav-link
+    text-decoration: none
+    color: black
+    position: relative
+
+    &::after
+      content: ''
+      display: block
+      width: 0
+      height: 2px
+      background: #102E4A
+      transition: width 0.3s
+      position: absolute
+      bottom: -2px
+      left: 0
+
+    &:hover::after
+      width: 100%
